@@ -89,11 +89,7 @@ spec:
   stepTemplate:
     env:
       - name: API_KEY
-        valueFrom:
-          secretKeyRef:
-            name: $(params.continuous-delivery-context-secret)
-            key: $(params.ibmcloud-apikey-secret-key)
-            optional: true
+        value: $(params.apikey)
       - name: PIPELINE_DEBUG
         value: $(params.pipeline-debug)
   steps:
